@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Lato', helvetica, sans-serif;
+  display: grid;
+  /* grid-template-columns: minmax(10px, 600px) 500px minmax(10px,600px);  /* this one is responsive */
+  grid-template-columns: minmax(10px, 900px) 40% minmax(10px, 900px);
+  background-image: url(http://www.transparenttextures.com/patterns/binding-dark.png);
+}
+/* how to load background texture from file? */
+/* how to get the right height on mobile? */
+
+@media(max-width: 60rem){
+  body {
+    grid-template-columns: minmax(2px,50px) 98% minmax(2px,50px);
+  }
+}
+
+@media screen and (min-device-width : 200px) and (max-device-width : 480px) {
+  body {
+    grid-template-columns: 10px 98% 10px;
+  }
+}
+
+
+
+.body-1 {
+  background: hsl(246.9, 50.7%, 13.5%);
+  background-image: url(http://www.transparenttextures.com/patterns/binding-dark.png);
+
+}
+
+.body-2 {
+  background: #061B35;
+  background-image: url(http://www.transparenttextures.com/patterns/binding-dark.png);
+
+}
+
+.body-3 {
+  background: #0C1A23;
+  background-image: url(http://www.transparenttextures.com/patterns/binding-dark.png);
+
+}
+
+
+.center-screen {
+  height: 100vh;
+  grid-column: 2;
+  display: grid;
+  color: white;
+}
+
+
+
+
+
+.record-container {
+  justify-self: center;
+}
+
+
+
+/* -------circles---------- */
+
+.circle {
+  stroke: hsl(29.1, 100%, 90%);
+  fill: transparent;
+  stroke-linecap: round;
+}
+
+.moving-circle {
+  transform-origin: 50% 50%;
+  animation-duration: 4s;
+  animation-timing-function: linear; /*makes animation smooth*/
+
+  animation-fill-mode: both;
+  animation-name: circle-rotate;
+  animation-play-state: paused;
+}
+
+.track-1 {
+  animation-iteration-count: 54;
+}
+
+.track-2 {
+  animation-iteration-count: 60;
+}
+
+.track-3 {
+  animation-iteration-count: 55;
+}
+
+
+
+#main-circle {
+  max-width: 300px;
+  stroke-width: 10;
+}
+
+
+#moving-circle-1 {
+  /* max-width: 100px; */
+  stroke-width: 5;
+  stroke-dasharray: 283; /*this equals the circumference*/
+  stroke-dashoffset: 15; /*this determines how long the line of the circle is*/
+}
+
+#moving-circle-2 {
+  /* max-width: 100px; */
+  stroke-width: 3;
+  stroke-dasharray: 283; /*this equals the circumference*/
+  stroke-dashoffset: 15; /*this determines how long the line of the circle is*/
+}
+
+#moving-circle-3 {
+  /* max-width: 100px; */
+  stroke-width: 2;
+  stroke-dasharray: 283; /*this equals the circumference*/
+  stroke-dashoffset: 130; /*this determines how long the line of the circle is*/
+}
+
+.circle-button {
+  stroke: hsl(29.1, 100%, 90%);
+  fill: transparent;
+  stroke-width: 4;
+}
+
+/* ---------- cd image ---------- */
+
+.record-cover {
+
+}
+
+/* -----------artist and track------ */
+
+.text {
+  justify-self: center;
+  color: hsl(29.1, 100%, 90%);
+  padding: 10px;
+  /* font-size: 20px; */
+}
+
+.playing {
+  margin-top: 10px;
+}
+
+
+
+
+/* ---------- audio bar ---------- */
+
+.audio-bar-container {
+  height: 10px;
+  padding: 0;
+}
+
+.background-1 {
+  background: #090720;
+}
+
+.background-2 {
+  background: #020F1F;
+}
+
+.background-3 {
+  background: #050F16;
+}
+
+.audio-bar {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: hsl(29.1, 100%, 90%);
+  position: relative;
+  overflow: hidden;
+
+
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-name: audio-bar;
+  animation-play-state: paused;
+}
+
+.bar-1 {
+  animation-duration: 215s;
+}
+
+.bar-2 {
+  animation-duration: 239s;
+}
+
+.bar-3 {
+  animation-duration: 220s;
+}
+
+/* ------------- audio buttons -------------- */
+
+.audio-buttons-container {
+  justify-self: center;
+  /* border: 1px solid white; */
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  max-height: 70px;
+
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+
+/* ------------link-------------- */
+
+.soundcloud {
+  justify-self: center;
+}
+.soundcloud a {
+  color: #f70;
+  transition: all 0.3s;
+}
+
+.soundcloud a:hover {
+  color: 	hsl(29.1, 100%, 90%);
+}
+/* ---------animations------------ */
+
+.pause {
+
+}
+
+.run {
+  animation-play-state: running;
+}
+
+@keyframes circle-rotate {
+  0% {
+    transform: rotate(0deg); /* use rotate or rotateZ ? */
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes audio-bar {
+  0% {
+    width: 0px;
+  }
+   100% {
+    width: 500px;
+  }
+}
+
+
+/* -----colours---- */
+
+/* orange: hsl(24, 93.9%, 61.4%); / #F98A40 */
+
+/* turquoise: / hsl(162.2, 67.7%, 44.9%); #25C092 */
+
+/* dark purple: hsl(246.9, 50.7%, 13.5%); / #151134 */
+
+/* pink: hsl(343.4, 82.9%, 86.3%); / #F9BFCF */
+
+/* peach: hsl(29.1, 100%, 90%); */
+
+
+/* notes */
+/*to calculate circumference for stroke-dasharray: 2 x 3.1416 x circle's radius*/

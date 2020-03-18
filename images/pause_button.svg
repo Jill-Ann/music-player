@@ -1,0 +1,45 @@
+
+<svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+
+  <style>
+    rect {
+      stroke: hsl(29.1, 100%, 90%);
+      fill: transparent;
+      stroke-linejoin: round;
+      transition: all 0.2s;
+      stroke-width: 4;
+    }
+    circle {
+      stroke: hsl(29.1, 100%, 90%);
+      fill: transparent;
+      stroke-width: 4;
+    }
+  </style>
+
+     <g>
+      <circle cx="35" cy="35" r="33" />
+      <rect class="button pause-button" x="23" y="19" width="8" height="33" />
+      <rect class="button pause-button" x="40" y="19" width="8" height="33" />
+     </g>
+</svg>
+
+
+<!-- original -->
+
+<!-- <svg width="40" height="60" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+
+  <style>
+    rect {
+      stroke: hsl(29.1, 100%, 90%);
+      fill: transparent;
+      stroke-linejoin: round;
+      transition: all 0.2s;
+      stroke-width: 4;
+    }
+  </style>
+
+     <g>
+      <rect class="button pause-button" x="5" y="12" width="8" height="40" />
+      <rect class="button pause-button" x="22" y="12" width="8" height="40" />
+     </g>
+</svg> -->
