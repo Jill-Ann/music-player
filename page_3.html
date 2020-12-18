@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>music player</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="body-3">
     <div class="center-screen">
-
       <h2 class="text playing">now playing</h2>
 
-     <!-- ____record____ -->
+      <!-- ____record____ -->
 
       <div class="record-container">
         <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-          <circle class="circle" id="main-circle" cx="150" cy="150" r="145"/>
-          <circle class="circle moving-circle animated-elements track-3" id="moving-circle-1" cx="150" cy="150" r="62"/>
-          <circle class="circle moving-circle animated-elements track-3" id="moving-circle-2" cx="150" cy="150" r="120"/>
-          <circle class="circle moving-circle animated-elements track-3" id="moving-circle-3" cx="150" cy="150" r="130"/>
-          <image class="record-cover moving-circle animated-elements track-3" href="images/marshall.png" alt="artists artwork" x="100" y="100" height="100px" width="100px"/>
+          <circle class="circle" id="main-circle" cx="150" cy="150" r="145" />
+          <circle
+            class="circle moving-circle animated-elements track-3"
+            id="moving-circle-1"
+            cx="150"
+            cy="150"
+            r="62"
+          />
+          <circle
+            class="circle moving-circle animated-elements track-3"
+            id="moving-circle-2"
+            cx="150"
+            cy="150"
+            r="120"
+          />
+          <circle
+            class="circle moving-circle animated-elements track-3"
+            id="moving-circle-3"
+            cx="150"
+            cy="150"
+            r="130"
+          />
+          <image
+            class="record-cover moving-circle animated-elements track-3"
+            href="images/marshall.png"
+            alt="artists artwork"
+            x="100"
+            y="100"
+            height="100px"
+            width="100px"
+          />
         </svg>
-       </div> <!--closes record -->
+      </div>
+      <!--closes record -->
 
       <h2 class="text track">BET</h2>
       <h3 class="text artist">Marshall Vincent</h3>
 
-
       <!--_____audio bar & buttons_____ -->
 
       <div class="audio-bar-container background-3">
-        <span class="audio-bar animated-elements bar-3" style="width: 25%"></span>
-
+        <span
+          class="audio-bar animated-elements bar-3"
+          style="width: 25%"
+        ></span>
       </div>
 
       <!-- <svg width="500" height="10">
@@ -41,56 +70,71 @@
 
       <audio src="audio/bet.mp3" id="player-2"></audio>
 
-       <div class="audio-buttons-container">
-         <a href="page_2.html"><img class="flip previous-button" src="images/next_track.svg" alt="previous track button"></a>
+      <div class="audio-buttons-container">
+        <a href="page_2.html"
+          ><img
+            class="flip previous-button"
+            src="images/next_track.svg"
+            alt="previous track button"
+        /></a>
 
-         <a href="#"><img src="images/play_button.svg" alt="play button" id="play-pause-button" onclick="playAnimation(); switchImage(); toggleSound()"></a>
+        <a href="#"
+          ><img
+            src="images/play_button.svg"
+            alt="play button"
+            id="play-pause-button"
+            onclick="playAnimation(); switchImage(); toggleSound()"
+        /></a>
 
-         <a href="#"><img src="images/next_track.svg" alt="next track button" class="next-button"></a>
-      </div> <!--closes audio-buttons-container -->
-
+        <a href="#"
+          ><img
+            src="images/next_track.svg"
+            alt="next track button"
+            class="next-button"
+        /></a>
+      </div>
+      <!--closes audio-buttons-container -->
 
       <!--soundcloud link -->
 
       <div class="soundcloud">
-        <p>visit artist on <a href="https://soundcloud.com/mvincentmusic" target="_blank">soundcloud</a></p>
+        <p>
+          visit artist on
+          <a href="https://soundcloud.com/mvincentmusic" target="_blank"
+            >soundcloud</a
+          >
+        </p>
       </div>
-
-
-    </div> <!--closes center-screen -->
+    </div>
+    <!--closes center-screen -->
 
     <!-- _____javascript____ -->
 
     <script>
-    function playAnimation() {
-       var element = document.getElementsByClassName("animated-elements");
-       var i;
-       for (i = 0; i < element.length; i++) {
-         element[i].classList.toggle("run");
-       }
-     }
-     // ^^because getElementsByClassName returns an array
+      function playAnimation() {
+        var element = document.getElementsByClassName("animated-elements");
+        var i;
+        for (i = 0; i < element.length; i++) {
+          element[i].classList.toggle("run");
+        }
+      }
 
-     function switchImage() {
-       imgsrc= document.getElementById("play-pause-button").src;
-       if (imgsrc.indexOf("images/play_button.svg")!=-1){
-         document.getElementById("play-pause-button").src ="images/pause_button.svg";
-       }
-       else{
-         document.getElementById("play-pause-button").src = "images/play_button.svg";
-       }
-     }
+      function switchImage() {
+        imgsrc = document.getElementById("play-pause-button").src;
+        if (imgsrc.indexOf("images/play_button.svg") != -1) {
+          document.getElementById("play-pause-button").src =
+            "images/pause_button.svg";
+        } else {
+          document.getElementById("play-pause-button").src =
+            "images/play_button.svg";
+        }
+      }
 
-     function toggleSound() {
-       var audioElem = document.getElementById('player-2');
-       if (audioElem.paused)
-         audioElem.play();
-       else
-         audioElem.pause();
-     }
-
+      function toggleSound() {
+        var audioElem = document.getElementById("player-2");
+        if (audioElem.paused) audioElem.play();
+        else audioElem.pause();
+      }
     </script>
-
-
   </body>
 </html>
